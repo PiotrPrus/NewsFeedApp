@@ -16,14 +16,13 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     private static final int LOADER_ID = 0;
     private ArticlesAdapter adapter;
-    private RecyclerView recyclerView;
     private List<Article> parsedData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new ArticlesAdapter();
         recyclerView.setAdapter(adapter);

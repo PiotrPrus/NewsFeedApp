@@ -39,10 +39,9 @@ public class ParserUtils {
                 .appendPath("search")
                 .appendQueryParameter("show-references", "author")
                 .appendQueryParameter("show-tags", "contributor")
-                .appendQueryParameter("q", "Poland")
+                .appendQueryParameter("q", "android")
                 .appendQueryParameter("api-key", "38a6e553-1904-4084-82a9-b0c08169af8b");
-        String url = builder.build().toString();
-        return url;
+        return builder.build().toString();
     }
 
     static URL createUrl() {
@@ -134,14 +133,15 @@ public class ParserUtils {
                 String author = "";
 
                 if (tagsArray.length() == 0) {
-                    author = null;
+                    author = "";
                 } else {
                     for (int j = 0; j<tagsArray.length(); j++) {
                         JSONObject tagsArrayJSONObject = tagsArray.getJSONObject(j);
                         author += tagsArrayJSONObject.getString("webTitle") + ", ";
                     }
+                    author = (author.substring(0, author.length() - 2));
                 }
-                articleList.add(new Article(articleTitle, author, date, url, section));
+                articleList.add(new Article(articleTitle, section, author, date, url));
             }
         } catch (JSONException e) {
             Log.e("ParserUtils", "Error parsing JSON response", e);

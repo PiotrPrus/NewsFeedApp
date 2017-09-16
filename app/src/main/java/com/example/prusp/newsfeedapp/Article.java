@@ -6,11 +6,11 @@ package com.example.prusp.newsfeedapp;
 
 public class Article {
 
-    String webTitle;
-    String sectionName;
-    String authors;
-    String webPublicationDate;
-    String articleUrl;
+    private String webTitle;
+    private String sectionName;
+    private String authors;
+    private String webPublicationDate;
+    private String articleUrl;
 
     public Article(String webTitle, String sectionName, String authors, String webPublicationDate, String articleUrl) {
         this.webTitle = webTitle;
@@ -24,40 +24,20 @@ public class Article {
         return webTitle;
     }
 
-    public void setWebTitle(String webTitle) {
-        this.webTitle = webTitle;
-    }
-
     public String getSectionName() {
         return sectionName;
-    }
-
-    public void setSectionName(String sectionName) {
-        this.sectionName = sectionName;
     }
 
     public String getAuthors() {
         return authors;
     }
 
-    public void setAuthors(String authors) {
-        this.authors = authors;
-    }
-
     public String getWebPublicationDate() {
         return webPublicationDate;
     }
 
-    public void setWebPublicationDate(String webPublicationDate) {
-        this.webPublicationDate = webPublicationDate;
-    }
-
     public String getArticleUrl() {
         return articleUrl;
-    }
-
-    public void setArticleUrl(String articleUrl) {
-        this.articleUrl = articleUrl;
     }
 
     @Override
